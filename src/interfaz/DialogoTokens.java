@@ -21,57 +21,55 @@ import javax.swing.JScrollPane;
 /**
  * Diálogo para mostrar los tokens
  */
-public class DialogoTokens extends JDialog
-{
+public class DialogoTokens extends JDialog {
 
-    // -----------------------------------------------------------------
-    // Atributos de Interfaz
-    // -----------------------------------------------------------------
+	// -----------------------------------------------------------------
+	// Atributos de Interfaz
+	// -----------------------------------------------------------------
 
-    /**
-     * Es el panel usado para contener la lista
-     */
-    private JScrollPane scrollDesplazamiento;
+	/**
+	 * Es el panel usado para contener la lista
+	 */
+	private JScrollPane scrollDesplazamiento;
 
-    /**
-     * La lista donde se muestran los tokens
-     */
-    private JList listaTokens;
+	/**
+	 * La lista donde se muestran los tokens
+	 */
+	private JList listaTokens;
 
-    // -----------------------------------------------------------------
-    // Constructores
-    // -----------------------------------------------------------------
+	// -----------------------------------------------------------------
+	// Constructores
+	// -----------------------------------------------------------------
 
-    /**
-     * Diálogo donde se muestran los tokens
-     */
-    public DialogoTokens( )
-    {
-        setBackground( Color.white );
-        setTitle( "Tokens" );
-        scrollDesplazamiento = new JScrollPane( );
+	/**
+	 * Diálogo donde se muestran los tokens
+	 */
+	public DialogoTokens() {
+		setBackground(Color.white);
+		setTitle("Tokens");
+		scrollDesplazamiento = new JScrollPane();
 
-        // Lista donde se almacenaran los tokens
-        listaTokens = new JList( );
-        listaTokens.setSelectionMode( javax.swing.ListSelectionModel.SINGLE_SELECTION );
+		// Lista donde se almacenaran los tokens
+		listaTokens = new JList();
+		listaTokens.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        // Scroll que desplegará la lista de tokens
-        scrollDesplazamiento.setVerticalScrollBarPolicy( javax.swing.JScrollPane.VERTICAL_SCROLLBAR_ALWAYS );
-        scrollDesplazamiento.setViewportView( listaTokens );
-        add( scrollDesplazamiento );
-    }
+		// Scroll que desplegará la lista de tokens
+		scrollDesplazamiento.setVerticalScrollBarPolicy(javax.swing.JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollDesplazamiento.setViewportView(listaTokens);
+		add(scrollDesplazamiento);
+	}
 
-    // -----------------------------------------------------------------
-    // Métodos
-    // -----------------------------------------------------------------
+	// -----------------------------------------------------------------
+	// Métodos
+	// -----------------------------------------------------------------
 
-    /**
-     * Modifica la lista de tokens mostrada
-     * @param vectorTokensEditados La lista con la descripción de los tokens que
-     * se van a mostrar en la lista
-     */
-    public void cambiarListaTokens( ArrayList vectorTokensEditados )
-    {
-        listaTokens.setListData( vectorTokensEditados.toArray( ) );
-    }
+	/**
+	 * Modifica la lista de tokens mostrada
+	 * 
+	 * @param vectorTokensEditados La lista con la descripción de los tokens que se
+	 *                             van a mostrar en la lista
+	 */
+	public void cambiarListaTokens(ArrayList vectorTokensEditados) {
+		listaTokens.setListData(vectorTokensEditados.toArray());
+	}
 }

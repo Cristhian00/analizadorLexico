@@ -23,7 +23,6 @@ public class Token {
 	/**
 	 * Constantes para modelar los posibles tipos de token que se van a analizar
 	 */
-	final public static String ENTERO = "Entero";
 	final public static String OPERADORADITIVO = "Operador aditivo";
 	final public static String IDENTIFICADOR = "Identificador";
 	final public static String NORECONOCIDO = "No reconocido";
@@ -35,11 +34,24 @@ public class Token {
 	final public static String SIMBOLOABRIR = "Símbolo de abrir";
 	final public static String SIMBOLOCERRAR = "Símbolo de cerrar";
 	final public static String SEPARADORSENTENCIA = "Separador de sentencia";
+	final public static String TERMINALINICIAL = "Simbolo de iniciar o terminar";
 	
 	final public static String CICLO = "Palabra reservada para ciclo";
 	final public static String DECISION = "Palabra reservada para decisión";
 	final public static String CLASE = "Palabra reservada para clase";
 	
+	final public static String NOMBREVARIABLE = "Nombre de variable";
+	final public static String NOMBREMETODO = "Nombre de método";
+	final public static String NOMBRECLASE = "Nombre de clase";
+	
+	final public static String NUMEROENTERO = "Número entero";
+	final public static String NUMEROFLOAT = "Número float";
+	final public static String NUMERODOUBLE = "Número double";
+	final public static String NUMEROLONG = "Número long";
+	
+	final public static String CADENA = "Cadena de caracteres";
+	final public static String SALTOLINEA = "Salto de linea";
+	final public static String CARACTER = "Un caracter";
 
 	// -----------------------------------------------------------------
 	// Atributos

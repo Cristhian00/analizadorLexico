@@ -50,6 +50,12 @@ public class Token {
 	final public static String CADENA = "Cadena de caracteres";
 	final public static String SALTOLINEA = "Salto de linea";
 	final public static String CARACTER = "Un caracter";
+	
+	final public static String PALABRAINT = "Palabra Int";
+	final public static String PALABRAFLOAT = "Palabra float";
+	final public static String PALABRALONG = "Palabra long";
+	final public static String PALABRASTRING = "Palabra String";
+	final public static String PALABRACHAR = "Palabra char";
 
 	// -----------------------------------------------------------------
 	// Atributos

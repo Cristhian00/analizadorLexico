@@ -57,12 +57,6 @@ public class AnalizadorLexico {
 	public Token extraerSiguienteToken(String cod, int i) {
 		Token token;
 
-		// 20. Intenta extraer un salto de linea
-		token = extraerSaltoLinea(cod, i);
-		if (token != null) {
-			return token;
-		}
-
 		// 1. Intenta extraer una cadena
 		token = extraerCadena(cod, i);
 		if (token != null) {
@@ -171,14 +165,38 @@ public class AnalizadorLexico {
 			return token;
 		}
 
-		// 19. Intenta extraer un número long
-		token = extraerNumeroLong(cod, i);
+		// 19. Intenta extraer un caracter
+		token = extraerCaracter(cod, i);
 		if (token != null) {
 			return token;
 		}
 
-		// 21. Intenta extraer un caracter
-		token = extraerCaracter(cod, i);
+		// 20. Intenta extraer palabra int
+		token = extraerPalabraInt(cod, i);
+		if (token != null) {
+			return token;
+		}
+
+		// 21. Intenta extraer palabra float
+		token = extraerPalabraFloat(cod, i);
+		if (token != null) {
+			return token;
+		}
+
+		// 22. Intenta extraer palabra long
+		token = extraerPalabraLong(cod, i);
+		if (token != null) {
+			return token;
+		}
+
+		// 23. Intenta extraer palabra String
+		token = extraerPalabraString(cod, i);
+		if (token != null) {
+			return token;
+		}
+
+		// 24. Intenta extraer palabra char
+		token = extraerPalabraChar(cod, i);
 		if (token != null) {
 			return token;
 		}
@@ -609,6 +627,83 @@ public class AnalizadorLexico {
 						Token token = new Token(lex, Token.CARACTER, j);
 						return token;
 					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public Token extraerPalabraInt(String cod, int i) {
+		int j = i + 1;
+		String lex;
+		if (j < cod.length()) {
+			if (cod.charAt(i) == 'e') {
+				if (cod.charAt(j) == 'n') {
+					lex = cod.substring(i, j + 1);
+					Token token = new Token(lex, Token.PALABRAINT, j + 1);
+					return token;
+				}
+			}
+		}
+		return null;
+	}
+
+	public Token extraerPalabraFloat(String cod, int i) {
+		int j = i + 1;
+		String lex;
+		if (j < cod.length()) {
+			if (cod.charAt(i) == 'f') {
+				if (cod.charAt(j) == 'l') {
+					lex = cod.substring(i, j + 1);
+					Token token = new Token(lex, Token.PALABRAFLOAT, j + 1);
+					return token;
+				}
+			}
+		}
+		return null;
+	}
+
+	public Token extraerPalabraLong(String cod, int i) {
+		int j = i + 1;
+		String lex;
+		if (j < cod.length()) {
+			if (cod.charAt(i) == 'l') {
+				if (cod.charAt(j) == 'g') {
+					lex = cod.substring(i, j + 1);
+					Token token = new Token(lex, Token.PALABRALONG, j + 1);
+					return token;
+				}
+			}
+		}
+		return null;
+	}
+
+	public Token extraerPalabraString(String cod, int i) {
+		int j = i + 1;
+		String lex;
+		if (j + 1 < cod.length()) {
+			if (cod.charAt(i) == 'c') {
+				if (cod.charAt(j) == 'a') {
+					if (cod.charAt(j + 1) == 'd') {
+						lex = cod.substring(i, j + 2);
+						Token token = new Token(lex, Token.PALABRASTRING, j + 2);
+						return token;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public Token extraerPalabraChar(String cod, int i) {
+		int j = i + 1;
+		String lex;
+		if (j < cod.length()) {
+			if (cod.charAt(i) == 'x') {
+				if (cod.charAt(j) == 'r') {
+					lex = cod.substring(i, j + 1);
+					Token token = new Token(lex, Token.PALABRACHAR, j + 1);
+					return token;
 				}
 			}
 		}

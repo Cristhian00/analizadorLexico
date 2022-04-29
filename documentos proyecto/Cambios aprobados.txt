@@ -1,0 +1,5 @@
+
+Operador lógico     : 23 cambiarlo por -> ? (63 ) en ASCII 
+Terminal o inicial  : 26 cambiarlo por -> ~ (126) en ASCII
+cadena de caracteres: 25 cambiarlo por -> ¡ (173) en ASCII
+Cadena de caracteres: 20 cambiarlo por -> § (245) en ASCII 

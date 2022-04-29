@@ -1,0 +1,27 @@
+smrtmpdvmd mymnig×ig ÿ?× smigrtigmpigdvigmdig «\| »/┤ ~ ┘¤ð¦ rpkhesobox Software3_TLF#petro @1997e©35.9┌12.90 -yg35@TR34.-¡a¡ enfllgcadxr
+
+CATEGORIA		|TOKEN			|EXPRESIÓN			|JAVA			|TAKATAKA
+Operadores		|Operador aritmetico	|((sm)u(rt)u(mp)u(dv)u(md))	|+,-,*,/,%		|sm,rt,mp,dv,md
+Operadores		|Operador relacional	|((my)u(mn)u(ig)u(xig))		|>,<,=,!=		|my,mn,ig,xig
+Operadores		|Operador lógico	|((ÿ)u(?)u(×))			|&&,||,!		|ÿ,?,×
+Operadores		|Operador asignación	|((sm)u(rt)u(mp)u(dv)u(md))ig	|+=,-=,*=,/=,%=		|smig,rtig,mpig,dvig,mdig
+Símbolos		|Símbolo abrir		|((«)u(\)u(|))			|{,(,[			|«,\,|
+Símbolos		|Símbolo cerrar		|((»)u(/)u(┤))			|},),]			|»,/,┤
+Símbolos		|Terminal o inicial	|(~)				|Inicia			|~
+Símbolos		|Separador de sentencia	|((┘)u(¤)u(ð)u(¦))		|;,.,(,),:		|┘,¤,ð,¦
+Palabras reservadas	|Ciclo ó bucle		|(rp)				|for			|rp
+Palabras reservadas	|Desición		|((khe)u(so))			|if,else		|khe,so
+Palabras reservadas	|Clase			|(box)				|class			|box
+Identificadores		|Variable		|(M(LuD)*_)			|software3		|Software3_
+Identificadores		|Método			|(MMM(M)*)			|tlf			|TLF
+Identificadores		|Clase			|(#(NNN(N)*)			|Petro			|#petro
+Números			|Entero			|(@DD*e)			|1997			|@1997e
+Números reales		|Float			|(©DD*.DD*)			|35.9			|©35.9
+Números reales		|Double			|(┌DD*.DD*)			|12.90			|┌12.90
+Cadena de caracteres	|Cadena			|(-CS-)				|"yg35@TR34."		|-yg35@TR34.-
+Cadena de caracteres	|Caracter		|(¡CS¡)				|'a'			|¡a¡
+Palabras		|int			|(en)				|int			|en
+Palabras		|float			|(fl)				|float			|fl
+Palabras		|long			|(lg)				|long			|lg
+Palabras		|String			|(cad)				|String			|cad
+Palabras		|char			|(xr)				|char			|xr

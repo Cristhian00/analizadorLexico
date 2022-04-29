@@ -244,7 +244,7 @@ public class AnalizadorLexico {
 		boolean ban = false;
 
 		if (j + 1 < cod.length()) {
-			if (cod.charAt(i) == 'x') {
+			if (cod.charAt(i) == '×') {
 				if (cod.charAt(j) == 'i') {
 					if (cod.charAt(j + 1) == 'g') {
 						j += 2;

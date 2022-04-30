@@ -206,6 +206,16 @@ public class AnalizadorLexico {
 		return token;
 	}
 
+		/**
+	 * Extraer un caracter de tipo operador aritmetic de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - operador aritmético sea mas, menos, por o dividido
+	 * Sea sm para suma, rt para resta, mp para multiplicacion, md para modulo y dv para division
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el operador lógico identificado
+	 * 
+	 */
 	public Token extraerOperadorAritmetico(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -237,7 +247,17 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
-
+	
+	/**
+	 * Extraer un caracter de tipo operador relacional de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - operador relacional sea mayor, menor, igual o diferente
+	 *Sea my para >, mn para <, sea ig para = y ×ig para ¡=
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el operador relacional identificado
+	 * 
+	 */
 	public Token extraerOperadorRelacional(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -274,6 +294,16 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de tipo operador lógico de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - operador logico sea y, o no
+	 *Sea ÿ para el &&, ? para el || y × para el no
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el operador lógico identificado
+	 * 
+	 */
 	public Token extraerOperadorLogico(String cod, int i) {
 		String lex;
 		if ((cod.charAt(i) == 'ÿ') || (cod.charAt(i) == '?') || (cod.charAt(i) == '×')) {
@@ -283,6 +313,19 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
+
+	/**
+	 * Extraer un caracter de tipo operador de asignación la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - operador de asignacion sea mas igual, menos igual
+	 * por igual, dividir igual, modulo igual
+	 *Sea smig para mas igual, rtig para menos igual, mpig para por igual, 
+	 *mdig para modulo igual y dvig para dividir igual
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el operador de asignación identificado
+	 * 
+	 */
 
 	public Token extraerOperadorAsignacion(String cod, int i) {
 		int j = i + 1;
@@ -321,6 +364,16 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de tipo simbolo de abrir de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - simbolo de abrir sea {, ( y [
+	 *Sea « para {, \\ para ( y | para [
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el simbolo de abrir identificado
+	 */
+
 	public Token extraerSimboloAbrir(String cod, int i) {
 		String lex;
 		if ((cod.charAt(i) == '«') || (cod.charAt(i) == '\\') || (cod.charAt(i) == '|')) {
@@ -331,6 +384,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de tipo simbolo de cerrar de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - simbolo de abrir sea }, ) y ]
+	 *Sea » para {, / para ) y ┤ para ]
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el simbolo de abrir identificado
+	 */
 	public Token extraerSimboloCerrar(String cod, int i) {
 		String lex;
 		if ((cod.charAt(i) == '»') || (cod.charAt(i) == '/') || (cod.charAt(i) == '┤')) {
@@ -341,6 +403,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de tipo Separador de sentencia de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - simbolo de abrir sea ; . : , 
+	 *Sea ┘ para ;, ¤ para . , ð para , y ¦ para :
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el separador de sentencia
+	 */
 	public Token extraerSeparadorSentencia(String cod, int i) {
 		String lex;
 		if ((cod.charAt(i) == '┘') || (cod.charAt(i) == '¤') || (cod.charAt(i) == 'ð') || (cod.charAt(i) == '¦')) {
@@ -350,7 +421,15 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
-
+	/**
+	 * Extraer un caracter de tipo Simbolo de terminal o inicial de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - simbolo de inicial o terminal
+	 * Como lo es ~
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el separador de sentencia
+	 */
 	public Token extraerSimboloTerminalInicial(String cod, int i) {
 		String lex;
 		if (cod.charAt(i) == '~') {
@@ -361,6 +440,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra utilizada para el ciclo la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra de ciclo
+	 *Sea rp la palabra utilizada para realizar un ciclo
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra utilizada para realizar un ciclo 
+	 */
 	public Token extraerPalabraCiclo(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -376,6 +464,16 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra utilizada para la desicion la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra para realizar una desicion
+	 *Sea khe la palabra utilizada para realizar un ciclo reemplazando el if en java 
+	 * y en caso que no se cumpla so la palabra utilizada para reemplazar el else 
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra utilizada para realizar una desicion
+	 */
 	public Token extraerPalabraDesicion(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -406,6 +504,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra que nombra las clases de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra usada para nombrar las clases
+	 *Sea box la palabra utilizada para nombrar una clase
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra utilizada para nombrar una clase
+	 */
 	public Token extraerPalabraClase(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -423,7 +530,16 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
-
+	/**
+	 * Extraer un caracter del nombre de las variables de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - nombre de la variable
+	 * Para nombrar una variable debe de empezar con la primera letra en mayuscula
+	 * y termine en guion bajo
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la variable nombrada
+	 */
 	public Token extraerNombreVariable(String cod, int i) {
 		if ((cod.length() >= 2) && (esMayuscula(cod.charAt(i)))) {
 			int j = i + 1;
@@ -439,7 +555,17 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
-
+	/**
+	 * Extraer un caracter del nombre de los metodos de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - nombre del metodo
+	 * Para nombrar un metodo debe de estar todo en mayuscula
+	 * y minimo debe de tener 3 letras
+	 * y termine en guion bajo
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el metodo nombrado
+	 */
 	public Token extraerNombreMetodo(String cod, int i) {
 		int cont = 0;
 		if ((cod.length() >= 3) && (esMayuscula(cod.charAt(i)))) {
@@ -457,7 +583,17 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
-
+ 
+	/**
+	 * Extraer un caracter del nombre de las clases de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - nombre de la clase
+	 * Para nombrar una clase debe de comenzar en # y todo debe de estar
+	 * en minúscula y minimo debe de tener 3 letras
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la clase nombrada
+	 */
 	public Token extraerNombreClase(String cod, int i) {
 		int cont = 0;
 		if ((cod.length() >= 3) && (cod.charAt(i) == '#')) {
@@ -475,6 +611,16 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un número entero de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - numero entero
+	 * Para que un número entero pueda ser interpretado debe de empezar por @ 
+	 * tener al menos un dígito seguido de cero o más digitos y finaliza con una e
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el numero entero asignado
+	 */
 	public Token extraerNumeroEntero(String cod, int i) {
 		int j;
 		String lex;
@@ -495,6 +641,17 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un número flotante de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - numero flotante
+	 * Para que un número flotante pueda ser interpretado debe de empezar por ©
+	 * tener al menos un dígito seguido de cero o más digitos, luego un punto seguido
+	 * de al menos un dígito y luego cero o más dígitos
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el numero flotante asignado
+	 */
 	public Token extraerNumeroFloat(String cod, int i) {
 		int j;
 		String lex;
@@ -520,6 +677,17 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un número doble de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - numero doble
+	 * Para que un número doble pueda ser interpretado debe de empezar por ┌
+	 * tener al menos un dígito seguido de cero o más digitos, luego un punto seguido
+	 * de al menos un dígito y luego cero o más dígitos
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el numero doble asignado
+	 */
 	public Token extraerNumeroDouble(String cod, int i) {
 		int j;
 		String lex;
@@ -545,6 +713,17 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un número largo de la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - numero largo
+	 * Para que un número largo pueda ser interpretado debe de empezar por └
+	 * tener al menos un dígito seguido de cero o más digitos, luego un punto seguido
+	 * de al menos un dígito y luego cero o más dígitos
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el numero largo asignado
+	 */
 	public Token extraerNumeroLong(String cod, int i) {
 		int j;
 		String lex;
@@ -570,6 +749,16 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un nombramiento de una cadena de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - cadena de caracteres
+	 * Para que una cadena de caracteres pueda ser interpretado debe de empezar 
+	 * y terminar con un guión por ejemplo -hola-
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la cadena asignada
+	 */
 	public Token extraerCadena(String cod, int i) {
 		int j;
 		String lex;
@@ -597,6 +786,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un un salto de linea de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - un salto de linea
+	 * Para que un salto de linea pueda ser interpretado se debe expresar así: -§-
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el caracter asignado
+	 */
 	public Token extraerSaltoLinea(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -615,6 +813,16 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de un nombramiento de un caracter de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - un caracter
+	 * Para que una caracter pueda ser interpretado debe de empezar 
+	 * y terminar con ¡ por ejemplo ¡hola¡
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return el caracter asignado
+	 */
 	public Token extraerCaracter(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -633,6 +841,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra int de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra int
+	 * La palabra int es reemplazada por en
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra int reemplazada
+	 */
 	public Token extraerPalabraInt(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -647,7 +864,16 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
-
+ 
+	/**
+	 * Extraer un caracter de la palabra Float de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra Float
+	 * La palabra float es reemplazada por fl
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra float reemplazada
+	 */
 	public Token extraerPalabraFloat(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -663,6 +889,14 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra Long de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * @param cod - palabra long
+	 * La palabra long es reemplazada por lg
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra long reemplazada
+	 */
 	public Token extraerPalabraLong(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -678,6 +912,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra String de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra String
+	 * La palabra String es reemplazada por cad
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra String reemplazada
+	 */
 	public Token extraerPalabraString(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -695,6 +938,15 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Extraer un caracter de la palabra char de  la cadena cod a partir de la posición i.
+	 * Para cambiarlo por los simbolos determinados en ella
+	 * 
+	 * @param cod - palabra char
+	 * La palabra char es reemplazada por xr
+	 * @param i   - posición a partir de la cual se va a extraer el token 
+	 * @return la palabra char reemplazada
+	 */
 	public Token extraerPalabraChar(String cod, int i) {
 		int j = i + 1;
 		String lex;
@@ -709,6 +961,7 @@ public class AnalizadorLexico {
 		}
 		return null;
 	}
+
 
 	/**
 	 * Extraer un lexema no reconocido de la cadena cod a partir de la posición i.

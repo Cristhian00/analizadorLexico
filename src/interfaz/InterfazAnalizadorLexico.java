@@ -1,12 +1,12 @@
 
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: InterfazAnalizadorLexico.java,v 1.0 2008/08/17 10:39:08 da-romer Exp $
- * Universidad del QuindÌo (Bogot· - Colombia)
- * Programa de IngenierÌa de Sistemas y ComputaciÛn
+ * Universidad del Quind√≠o (Bogot√° - Colombia)
+ * Programa de Ingenier√≠a de Sistemas y Computaci√≥n
  *
- * Asignatura TeorÌa de Lenguajes Formales
- * Ejercicio : Analizador lÈxico
- * Autor inicial: Leonardo A. Hern·ndez R. - Agosto 17 de 2008, sep 2013
+ * Asignatura Teor√≠a de Lenguajes Formales
+ * Ejercicio : Analizador l√©xico
+ * Autor inicial: Leonardo A. Hern√°ndez R. - Agosto 17 de 2008, sep 2013
  * Autor:
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
@@ -27,7 +27,7 @@ import mundo.AnalizadorLexico;
 import mundo.Token;
 
 /**
- * Ventana principal de la aplicaciÛn
+ * Ventana principal de la aplicaci√≥n
  */
 public class InterfazAnalizadorLexico extends JFrame {
 
@@ -41,12 +41,12 @@ public class InterfazAnalizadorLexico extends JFrame {
 	private PanelEntradaCodigo panelEntradaCodigo;
 
 	/**
-	 * El di·logo usado para mostrar los tokens
+	 * El di√°logo usado para mostrar los tokens
 	 */
 	private DialogoTokens dialogoTokens;
 
 	/**
-	 * Analizador lÈxico
+	 * Analizador l√©xico
 	 */
 	private AnalizadorLexico analizadorLexico;
 
@@ -61,7 +61,7 @@ public class InterfazAnalizadorLexico extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setVisible(true);
 		setResizable(false);
-		setTitle("Analizador LÈxico");
+		setTitle("Analizador L√©xico");
 		setLayout(new GridLayout(1, 1));
 		analizadorLexico = new AnalizadorLexico();
 		panelEntradaCodigo = new PanelEntradaCodigo(this);
@@ -73,11 +73,11 @@ public class InterfazAnalizadorLexico extends JFrame {
 	}
 
 	// -----------------------------------------------------------
-	// MÈtodos
+	// M√©todos
 	// -----------------------------------------------------------
 
 	/**
-	 * Centra el frame en la pantalla seg˙n resoluciÛn
+	 * Centra el frame en la pantalla seg√∫n resoluci√≥n
 	 */
 	private void centrarFrame() {
 		Dimension screenSize = getToolkit().getScreenSize();
@@ -87,7 +87,7 @@ public class InterfazAnalizadorLexico extends JFrame {
 	}
 
 	/**
-	 * MÈtodo usado para ver los tokens del cÛdigo ingresada param codigo cÛdigo
+	 * M√©todo usado para ver los tokens del c√≥digo ingresada param codigo c√≥digo
 	 * fuente que se va a analizar
 	 */
 	public void verTokens(String codigo) {
@@ -113,7 +113,7 @@ public class InterfazAnalizadorLexico extends JFrame {
 	}
 
 	/**
-	 * Calcula el punto que indica la posiciÛn centrada del frame
+	 * Calcula el punto que indica la posici√≥n centrada del frame
 	 * 
 	 * @param componentePadre - Ventana Padre del componente - !=null
 	 * @param componenteHijo  - Ventana Hija del componente - !=null
@@ -123,13 +123,13 @@ public class InterfazAnalizadorLexico extends JFrame {
 		Dimension tamanoPantalla, tamanoPadre, tamanoHijo;
 		Point localizacionPadre;
 
-		// Centra la ventana y verifica que no sea mayor que la resoluciÛn
+		// Centra la ventana y verifica que no sea mayor que la resoluci√≥n
 		// actual
 		tamanoPantalla = Toolkit.getDefaultToolkit().getScreenSize();
 		int max_y = tamanoPantalla.height;
 		int min_y = 0;
 
-		// TamaÒo de la resolucion de la pantalla
+		// Tama√±o de la resolucion de la pantalla
 		tamanoPadre = componentePadre.getSize();
 		localizacionPadre = componentePadre.getLocation();
 		tamanoHijo = componenteHijo.getSize();
@@ -153,12 +153,13 @@ public class InterfazAnalizadorLexico extends JFrame {
 	// -----------------------------------------------------------------
 
 	/**
-	 * Ejecuta la aplicaciÛn
+	 * Ejecuta la aplicaci√≥n
 	 * 
-	 * @param args Son los par·metros de la lÌnea de comandos. No se utilizan.
+	 * @param args Son los par√°metros de la l√≠nea de comandos. No se utilizan.
 	 */
 	public static void main(String[] args) {
 		InterfazAnalizadorLexico interfaz = new InterfazAnalizadorLexico();
 		interfaz.setVisible(true);
 	}
 }
+//Hola
